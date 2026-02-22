@@ -9,13 +9,13 @@ import org.junit.runner.RunWith;
 @CucumberOptions(plugin = {
         "html:target/cucumber-reports.html",
         "rerun:target/rerun.txt",
-        "me.jvt.cucumber.report.PrettyReports:target/cucumber"
+
 },
 features ="src/test/resources/features",
-        glue = "src/test/java/UI/step_definitions",
+        glue = "UI.step_definitions",
         dryRun = false,
-        tags = "",
-publish = true
+        tags = "@US1",
+publish = false
 )
 
 public class CookesRunner {
