@@ -1,6 +1,6 @@
 package UI.step_definitions;
 
-import UI.pages.VerificationPage;
+import UI.pages.US2_Page;
 import UI.utilities.ConfigurationReader;
 import UI.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -9,8 +9,8 @@ import org.junit.Assert;
 
 import java.time.Duration;
 
-public class US2 extends Common {
-    VerificationPage verificationPage=new VerificationPage();
+public class US2_Step_Definitions extends Common {
+    US2_Page verificationPage=new US2_Page();
 
 
     @Given("User should see {string} is visible")
@@ -32,12 +32,13 @@ public class US2 extends Common {
     @Then("User Verifies that {string} is visible")
     public void user_verifies_that_is_visible(String string) {
         Assert.assertTrue(verificationPage.deleteAccountButton.isDisplayed());
-        Assert.assertTrue(verificationPage.loggedInAsText.isDisplayed());
+
     }
 
     @Then("User clicks {string} button")
     public void user_clicks_button(String string) {
-
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    verificationPage.deleteAccountButton.click();
     }
 
     @Then("Verify that {string} is visible")

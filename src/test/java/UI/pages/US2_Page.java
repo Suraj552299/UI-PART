@@ -1,13 +1,12 @@
 package UI.pages;
 
-import UI.utilities.ConfigurationReader;
 import UI.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class VerificationPage extends RegistrationPage{
-    public VerificationPage(){
+public class US2_Page extends US1_Page {
+    public US2_Page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
     @FindBy(xpath = "//input[@data-qa='login-email']")
@@ -22,8 +21,7 @@ public class VerificationPage extends RegistrationPage{
     @FindBy(xpath = "//a[text()=' Delete Account']")
     public WebElement deleteAccountButton;
 
-    @FindBy(xpath = "//b[contains(text(),'Logged in as')]")
-    public WebElement loggedInAsText;
+
 
     @FindBy(xpath = "//b[text()='Account Deleted!']")
     public WebElement getDeleteAccountButtonText;

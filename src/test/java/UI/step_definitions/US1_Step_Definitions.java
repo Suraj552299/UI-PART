@@ -1,6 +1,5 @@
 package UI.step_definitions;
 
-import UI.pages.RegistrationPage;
 import UI.utilities.ConfigurationReader;
 import UI.utilities.Driver;
 import com.github.javafaker.Faker;
@@ -12,9 +11,9 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 
-public class US1 {
+public class US1_Step_Definitions extends Common {
 
-    RegistrationPage homePage=new RegistrationPage();
+
 
 
     @Given("User is on the Home page")
